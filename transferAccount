@@ -1,0 +1,19 @@
+ public bool Transfer(Account from, Account to, double amount)
+            {
+                 //amount must be greater than or equal to 0
+                 if (amount <= 0)
+                    //throw new ApplicationException("amount <= 0 !");
+                    return false;
+
+                //from.Balance must be greater than amount
+                if (from.Balance < amount)
+                    //throw new ApplicationException("fromBalance < amount !");
+                    return false;
+
+                from.Balance = from.Balance - amount;
+
+                // fromBalance on toBalance   
+                to.Balance = to.Balance + amount; 
+
+                return true;
+            }
